@@ -71,7 +71,7 @@ intents.messages = True
 intents.guilds = True
 intents.message_content = True
 
-bt = "quello presente in screen ..."  
+bt = "XXX"  
 
 @bot.event
 async def on_ready():
