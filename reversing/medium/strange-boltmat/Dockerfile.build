@@ -1,0 +1,13 @@
+FROM ubuntu:24.04 AS builder
+
+RUN apt-get update \
+    && apt-get -y --no-install-recommends install \
+    build-essential \
+    libxml2-dev
+
+WORKDIR /build
+ARG SERVER_IP=725c6c42725c6c # default value 0.0.0.0
+COPY Makefile ./
+COPY ./src_client ./src_client
+
+RUN make

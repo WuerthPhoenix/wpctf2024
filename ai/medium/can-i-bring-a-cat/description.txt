@@ -1,0 +1,4 @@
+A new company policy was recently introduced: it is now possible to bring dogs in the office, subject to authorisation!
+However, you're more of a cat person and find it unacceptable that your feline friends can't enter!
+It turns out, the authorisation method is built upon a small image recognition model, and the code using it was recently leaked by an anonymous employee with the same passion for cats.
+Are you able to fool the method and successfully bring your friend to work?

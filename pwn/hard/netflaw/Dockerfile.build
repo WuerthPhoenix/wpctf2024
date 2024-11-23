@@ -1,0 +1,19 @@
+FROM rockylinux:8 as build
+
+EXPOSE 9000
+
+RUN dnf install -y cmake make glibc-2.28-251.el8_10.5.x86_64 gcc-8.5.0-22.el8_10.x86_64
+
+RUN mkdir /app
+COPY *.c *.h CMakeLists.txt /app/
+
+WORKDIR /app
+
+RUN cmake .
+RUN make && rm /app/*.c /app/*.h /app/CMakeLists.txt
+
+FROM scratch AS export-stage
+COPY --from=build /app/netflaw /
+COPY --from=build /lib64/libc-2.28.so /
+COPY --from=build /lib64/ld-2.28.so /
+

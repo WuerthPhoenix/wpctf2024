@@ -1,0 +1,5 @@
+# The code of this challenge was tested with Python 3.11 and the following dependencies
+numpy==1.26.4
+scipy==1.14.1
+pillow==11.0.0
+requests==2.32.3

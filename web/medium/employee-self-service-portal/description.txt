@@ -1,0 +1,5 @@
+# Employee Self Service Portal
+
+Our infiltrator has identified the new employee self-service portal which is currently under development.
+This service, designed to allow employees to manage their personal information and request company services,
+is not yet fully operational, which could expose potential vulnerabilities.

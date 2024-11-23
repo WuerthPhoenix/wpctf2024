@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventory>
+    <item>
+        <id>1</id>
+        <name>Nails</name>
+        <model>WRT-1121</model>
+        <quantity>300</quantity>
+        <price>0.10</price>
+    </item>
+    <item>
+        <id>2</id>
+        <name>Sledge Hammer</name>
+        <model>WRT-1235</model>
+        <quantity>20</quantity>
+        <price>25.99</price>
+    </item>
+    <item>
+        <id>3</id>
+        <name>Ball Peen Hammer</name>
+        <model>WRT-1236</model>
+        <quantity>30</quantity>
+        <price>15.99</price>
+    </item>
+    <item>
+        <id>4</id>
+        <name>Flathead Screwdriver</name>
+        <model>WRT-5678</model>
+        <quantity>100</quantity>
+        <price>5.49</price>
+    </item>
+    <item>
+        <id>5</id>
+        <name>Phillips Screwdriver</name>
+        <model>WRT-5679</model>
+        <quantity>50</quantity>
+        <price>5.99</price>
+    </item>
+    <item>
+        <id>6</id>
+        <name>Adjustable Wrench</name>
+        <model>WRT-9101</model>
+        <quantity>75</quantity>
+        <price>8.99</price>
+    </item>
+    <item>
+        <id>7</id>
+        <name>Pipe Wrench</name>
+        <model>WRT-9102</model>
+        <quantity>40</quantity>
+        <price>12.99</price>
+    </item>
+    <item>
+        <id>8</id>
+        <name>Clown Hammer</name>
+        <model>WRT-47</model>
+        <quantity>47</quantity>
+        <price>47.47</price>
+    </item>
+    <item>
+        <id>9</id>
+        <name>Finishing Nails</name>
+        <model>WRT-1122</model>
+        <quantity>200</quantity>
+        <price>0.15</price>
+    </item>
+    <item>
+        <id>10</id>
+        <name>Electric Drill</name>
+        <model>WRT-3141</model>
+        <quantity>30</quantity>
+        <price>49.99</price>
+    </item>
+    <item>
+        <id>11</id>
+        <name>Cordless Drill</name>
+        <model>WRT-3142</model>
+        <quantity>25</quantity>
+        <price>59.99</price>
+    </item>
+    <item>
+        <id>12</id>
+        <name>Hammer Drill</name>
+        <model>WRT-123</model>
+        <quantity>15</quantity>
+        <price>69.99</price>
+    </item>
+    <item>
+        <id>13</id>
+        <name>Measuring Tape</name>
+        <model>WRT-5161</model>
+        <quantity>100</quantity>
+        <price>7.99</price>
+    </item>
+    <item>
+        <id>14</id>
+        <name>Laser Level</name>
+        <model>WRT-7181</model>
+        <quantity>60</quantity>
+        <price>29.99</price>
+    </item>
+    <item>
+        <id>15</id>
+        <name>Spirit Level</name>
+        <model>WRT-7182</model>
+        <quantity>40</quantity>
+        <price>9.99</price>
+    </item>
+    <item>
+        <id>16</id>
+        <name>Needle Nose Pliers</name>
+        <model>WRT-9202</model>
+        <quantity>80</quantity>
+        <price>6.99</price>
+    </item>
+    <item>
+        <id>17</id>
+        <name>Slip Joint Pliers</name>
+        <model>WRT-9203</model>
+        <quantity>60</quantity>
+        <price>7.99</price>
+    </item>
+</inventory>

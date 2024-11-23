@@ -1,0 +1,4 @@
+# The code of this challenge has been developed and tested with Python 3.12 and the following dependencies:
+tensorflow-cpu==2.17.0
+numpy==1.26.4
+pillow==10.4.0

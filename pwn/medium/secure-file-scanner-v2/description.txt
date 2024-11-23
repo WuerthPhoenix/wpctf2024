@@ -1,0 +1,5 @@
+Attention, operatives.
+
+You’ve made progress in your analysis of the Secure Document Scanner. The initial vulnerabilities have been patched—some exploits you uncovered were quickly addressed by the system’s developers, and certain weaknesses that could have been leveraged have been sealed off.
+
+In the latest version of the Secure Document Scanner, the developers have also added some very interesting new features!

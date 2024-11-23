@@ -1,0 +1,4 @@
+A newly developed intranet portal for the Human Resources department has been found.
+Although still under construction, it contains some user data that might be useful.
+The incomplete security measures could reveal vulnerabilities,
+potentially allowing access to information that should be restricted.

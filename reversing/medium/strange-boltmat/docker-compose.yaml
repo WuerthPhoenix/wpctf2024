@@ -1,0 +1,6 @@
+services:
+  boltmat-server:
+    image: wpctf2024-challenges:strange-boltmat-server
+    restart: unless-stopped
+    ports:
+      - "25565:25565"

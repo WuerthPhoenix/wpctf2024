@@ -1,0 +1,8 @@
+# The challenge code and dependencies were tested with Python 3.11 and the following dependencies
+fastapi[standard]==0.115.2
+fastapi-cache2==0.2.2
+fastapi-cli==0.0.5
+slowapi==0.1.9
+pillow==11.0.0
+numpy==1.26.4
+ai-edge-litert==1.0.1

@@ -1,0 +1,7 @@
+# Warehouse Inventory
+
+An outdated web interface for the company's Inventory Management System,
+used daily to update warehouse stock, has been discovered.
+The system appears to be patched hastily over the years, leaving potential vulnerabilities.
+Additionally, a partial source code extraction has revealed key components of its inner workings,
+which might be exploitable.

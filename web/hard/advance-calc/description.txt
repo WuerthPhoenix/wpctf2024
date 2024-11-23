@@ -1,0 +1,3 @@
+In class: 2+2 = 4
+Homework: 6/2(1+2)
+Exam: Well, I'm not sure if you can solve this one. I'm not a real calculator. But I can try to help you with xss.

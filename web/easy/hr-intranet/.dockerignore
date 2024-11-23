@@ -1,0 +1,7 @@
+Dockerfile
+docker-compose.yaml
+src/*.sqlite
+src/*.sqlite3
+src/node_modules
+*.txt
+*.md

@@ -1,0 +1,6 @@
+One of our operatives has successfully infiltrated in the organization through social engineering.
+Unable to communicate directly due to strict surveillance, they've hidden a crucial access key somewhere within the website.
+
+Your mission is to find the encoded message they left behind.
+Explore the site carefully—nothing is as it seems.
+Decode the message and retrieve the flag before it's too late!

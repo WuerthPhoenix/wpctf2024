@@ -1,0 +1,5 @@
+Our infiltrator has gained access to the web console used to manage the audio system for a rock band performing at the company’s party.
+This console controls everything from volume to effects, giving full control over the band's live sound setup through the execution of commands.
+However, the infiltrator wasn’t able to do much beyond finding the login credentials:
+username: `operator`
+password: `kevin`

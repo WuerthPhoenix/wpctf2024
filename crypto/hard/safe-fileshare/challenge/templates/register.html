@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1 class="text-center">
+        {% block title %}Register{% endblock %}
+    </h1>
+{% endblock %}
+
+{% block content %}
+    {% for message in get_flashed_messages() %}
+        <div class="error alert alert-danger alert-dismissible text-center">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <form method="POST" class="center bg-form">
+        <div class="container-fluid">
+            <div class="row my-2">
+                <div class="col-12">
+                    <label class="form-label"
+                           for="username">Username</label>
+                    <input class="form-control" name="username"
+                           id="username"
+                           required>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <label class="form-label"
+                           for="password">Password</label>
+                    <input class="form-control" type="password"
+                           name="password"
+                           id="password" required>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <a class="create align-middle" href="/auth/login.html">
+                        Login
+                    </a>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-block btn-primary w-100"
+                            type="submit">
+                        Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

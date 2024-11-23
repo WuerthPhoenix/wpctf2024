@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <link href="/css/style.css" rel="stylesheet"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Warehouse Inventory</title>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="max-500px">
+            Warehouse Inventory
+        </h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col offset-md-2 col-lg-6 offset-lg-3">
+
+            <div class="error alert alert-danger alert-dismissible text-center"
+                 style="display: none"></div>
+
+            <form id="uploadForm" autocomplete="off"
+                  enctype="multipart/form-data" class="center bg-form"
+                  method="POST" action="/upload">
+                <div class="mb-3">
+                    <label class="form-label" for="attachment">
+                        Upload new inventory
+                    </label>
+                    <input class="form-control" type="file" id="attachment"
+                           name="attachment" accept="text/xml"/>
+                </div>
+
+                <div class="row pt-3">
+                    <div class="col-6">
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn btn-block btn-primary w-100"
+                                id="_upload" name="_submit" type="submit">Upload
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div id="response" class="max-500px"></div>
+        </div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-md-8 col offset-md-2 col-lg-6 offset-lg-3">
+
+            <div class="error alert alert-danger alert-dismissible text-center"
+                 style="display: none"></div>
+
+            <div class="max-500px center bg-form">
+                <div class="mb-3">
+                    <label class="form-label">
+                        Download current inventory
+                    </label>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                    </div>
+
+                    <div class="col-6">
+                        <button id="downloadBtn" class="btn btn-block btn-primary w-100">
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('uploadForm').onsubmit = function (event) {
+        event.preventDefault();
+
+        const formData = new FormData();
+        const attachment = document.getElementById('attachment');
+        formData.append('attachment', attachment.files[0]);
+
+        fetch('/upload', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("" + response.status);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('response').innerText = 'File uploaded successfully!';
+            })
+            .catch(error => {
+                document.getElementById('response').innerText = 'Error uploading file!';
+                throw new Error();
+            });
+
+        document.getElementById('uploadForm').reset();
+    }
+
+    document.getElementById('downloadBtn').onclick = function () {
+        fetch('/download')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("" + response.status);
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'inventory.xml';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => {
+                document.getElementById('response').innerText = 'Error downloading file!';
+                throw new Error();
+            });
+    }
+</script>
+
+</body>
+</html>

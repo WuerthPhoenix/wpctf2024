@@ -1,0 +1,13 @@
+[package]
+name = "crypto-medium"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+base64 = "0.22.1"
+libflate = "2.1.0"
+rocket = { version = "0.5.1", features = ["serde_json", "tls"] }
+serde_json = "1.0.128"
+openssl = "0.10"

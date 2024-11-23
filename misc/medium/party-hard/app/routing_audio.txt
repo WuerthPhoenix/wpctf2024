@@ -1,0 +1,33 @@
+# Audio Routing Configuration
+
+# Input Channels
+Input 1: Lead Vocal Microphone
+Input 2: Guitar Amp
+Input 3: Bass DI
+Input 4: Drum Kit (Overhead Mic)
+Input 5: Backing Vocals
+
+# Output Channels
+Output 1: Main Left Speaker
+Output 2: Main Right Speaker
+Output 3: Monitor 1 (Lead Vocal Monitor)
+Output 4: Monitor 2 (Guitar Monitor)
+
+# Routing Matrix
+# Format: [Input] -> [Output]
+Input 1 -> Output 1
+Input 1 -> Output 2
+Input 1 -> Output 3  # Lead Vocal also sent to singer's monitor
+
+Input 2 -> Output 1
+Input 2 -> Output 2
+Input 2 -> Output 4  # Guitar also sent to guitarist's monitor
+
+Input 3 -> Output 1
+Input 3 -> Output 2
+
+Input 4 -> Output 1
+Input 4 -> Output 2
+
+Input 5 -> Output 1
+Input 5 -> Output 2

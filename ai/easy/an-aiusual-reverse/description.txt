@@ -1,0 +1,2 @@
+Name of the challenge: An AIusual reverse
+Description: We’ve obtained a machine learning model used by the security department to verify the identity of people at their entrance. The model was trained with all employees photos, likely to recognize authorized individuals. However, there are signs that sensitive information may have inadvertently been embedded during the training process in its first class. 

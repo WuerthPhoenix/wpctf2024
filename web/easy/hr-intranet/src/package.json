@@ -1,0 +1,29 @@
+{
+  "name": "hr-intranet",
+  "version": "1.0.0",
+  "description": "hr-intranet",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "lint": "eslint './*.js?(x)' './public/**/*.js?(x)'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wpctf2024"
+  },
+  "author": "SI-R&D",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.21.0",
+    "md5": "^2.3.0",
+    "sqlite3": "^5.1.7",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "eslint": "^9.12.0",
+    "globals": "^15.11.0"
+  }
+}

@@ -1,0 +1,47 @@
+<html lang="en">
+    <head>
+        <link href="/static/style.css" rel="stylesheet" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Fast calc</title>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="max-500px">
+                    I am speed
+                    
+                </h1>
+                <small>Your session id: {{calc_session_id}}</small>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col offset-md-2 col-lg-6 offset-lg-3">
+
+                    <div class="error alert alert-danger alert-dismissible text-center" style="display: none"></div>
+
+                    <form autocomplete="off" action="/" class="center bg-form" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label" for="name">Expression <small>(RES = {{last_result}}</small>)</label>
+                            <input autofocus="" class="form-control" id="name" name="expression" placeholder="2+2" required="" type="text" value="2+2">
+                        </div>
+
+                        <div class="row pt-3">
+                            <div class="col-6"></div>
+
+                            <div class="col-6">
+                                <input class="btn btn-block btn-primary w-100" type="submit" id="_submit" name="_submit" value="Evaluate">
+                            </div>
+                        </div>
+
+                    </form>
+                    <form autocomplete="off" action="/bot" method="POST">
+                        <input class="btn btn-block btn-primary w-100" type="submit" id="_bot" name="_bot" value="Share the app with our friends">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

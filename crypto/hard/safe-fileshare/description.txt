@@ -1,0 +1,1 @@
+Our infiltrator has managed to gain access to some secret internal documents. He managed to upload it to a file-sharing service under his account `intruder`, but vanished before he could share the link with you. Your mission, should you choose to accept it, is to analyze the service and download the file `flag.txt`.

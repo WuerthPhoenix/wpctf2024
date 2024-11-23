@@ -1,0 +1,5 @@
+One of your informants has tipped you off to a strange machine found discarded in the recycling depot behind the target company. Rumor has it that it might contain leftover sensitive data, and given the company's questionable privacy practices, you’re certain there could be something worth uncovering.
+
+Curiosity piqued, you decide to take a closer look. As you examine the machine, you notice an odd humming noise—and is that… movement inside?
+
+Your mission? Reverse engineer the binary and expose any secrets hidden within. Will you crack the code, or just end up with a pile of scrap?

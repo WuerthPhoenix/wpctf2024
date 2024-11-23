@@ -1,0 +1,23 @@
+FROM rockylinux:8
+
+EXPOSE 9000
+ARG FLAG="WPCTF{test_flag}"
+
+RUN dnf install -y socat glibc-2.28-251.el8_10.5.x86_64 gcc-8.5.0-22.el8_10.x86_64
+RUN dnf install -y dnf-plugins-core
+RUN dnf debuginfo-install -y glibc-2.28-251.el8_10.5.x86_64
+RUN dnf install -y procps gdb vim file python3
+
+RUN mkdir /app
+RUN echo "            $FLAG" > /app/flag
+RUN ln -s /dev/null /app/netflow.csv
+COPY . /app/
+
+RUN useradd -ms /bin/bash ctf
+
+WORKDIR /app
+USER ctf
+
+RUN bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
+
+CMD ["socat", "-dd", "TCP4-LISTEN:9000,fork,reuseaddr", "EXEC:\"/app/netflaw\",pty,stderr,setuid=ctf,raw"]

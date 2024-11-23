@@ -1,0 +1,4 @@
+# The Hacker Strikes Back
+
+We’ve discovered a critical exposed service at the company we’ve targeted, but we’re not alone.
+Other hackers are already in the game, aiming for the same corporate secrets, and they’re trying to block us to get there first.

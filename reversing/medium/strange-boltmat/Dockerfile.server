@@ -1,0 +1,14 @@
+FROM python:3.12-alpine
+
+RUN apk add --no-cache socat
+
+RUN adduser -D -u 1000 limiteduser
+
+COPY src_server/main.py /main.py
+COPY flag.txt /flag.txt
+
+EXPOSE 25565
+
+USER limiteduser
+
+CMD ["socat", "TCP-LISTEN:25565,reuseaddr,fork", "EXEC:python3 /main.py"]

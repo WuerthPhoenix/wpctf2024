@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1 class="text-center">
+        {% block title %}
+            {{ session.user.name }}'s uploaded files
+        {% endblock %}
+    </h1>
+    <a href="/auth/logout.html">Logout</a>
+{% endblock %}
+
+{% block content %}
+    <div id="response"
+         class="d-none alert alert-danger alert-dismissible text-center"></div>
+
+    <form class="center bg-form" id="upload-form" autocomplete="off"
+          enctype="multipart/form-data">
+        <div class="row my-2">
+            <div class="col-12">
+                <label class="form-label" for="file">
+                    Upload file
+                </label>
+                <div class="alert alert-success flex-column">
+                    <div class="m-3 upload-button">
+                        <input class="form-control opacity-0" type="file" id="file" name="file" multiple accept="*" onchange="uploadFileNames()"/>
+                    </div>
+                    <div id="filename" class="text-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 offset-6">
+                <button class="btn btn-block btn-primary w-100" id="_upload"
+                        name="_submit" type="submit">
+                    Upload
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="mt-5">
+        <ul class="px-0">
+            {% for file in files %}
+                <li class="d-flex my-1 justify-content-between align-content-center">
+                    <div class="d-flex flex-row justify-content-center px-2">
+                        <a class="m-auto"
+                           href="/files/{{ file.download_id }}?key={{ file.key }}">
+                            {{ file.filename }}
+                        </a>
+                    </div>
+                    <button class="btn btn-block btn-primary"
+                            onclick="copyLinkToClipboard('/files/{{ file.download_id }}?key={{ file.key }}')">
+                        Copy link
+                    </button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('upload-form').onsubmit = function (event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            const file = document.getElementById('file');
+            if (file.files.length == 0) {
+                return;
+            }
+
+            for (let i = 0; i < file.files.length; i++) {
+                formData.append('file' + i, file.files[i]);
+            }
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("" + response.status);
+                    }
+                    return response.text();
+                })
+                .then(_ => window.location.reload())
+                .catch(error => {
+                    const responseElement = document.getElementById('response');
+                    responseElement.innerText = error.message;
+                    responseElement.classList.remove('d-none');
+                    throw new Error();
+                });
+
+            document.getElementById('upload-form').reset();
+        }
+
+        function copyLinkToClipboard(link) {
+            navigator.clipboard.writeText(window.location.protocol + '//' + window.location.host + link);
+        }
+
+        function uploadFileNames() {
+            let file = document.getElementById('file');
+            let filename = document.getElementById('filename');
+            filename.textContent = "";
+            for (let i = 0; i < file.files.length; i++) {
+                filename.textContent += file.files[i].name + ' ';
+            }
+        }
+    </script>
+{% endblock %}
