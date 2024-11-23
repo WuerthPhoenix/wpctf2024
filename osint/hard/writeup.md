@@ -71,7 +71,7 @@ intents.messages = True
 intents.guilds = True
 intents.message_content = True
 
-bot_token = "MTMwODM3OTA0NjAxMDE2MzIyMA.GbM8p8.4T2vRo6N8A_A82ltCt98r167jLQ0Syos2VRa_0"  
+bt = "quello presente in screen ..."  
 
 @bot.event
 async def on_ready():
@@ -91,7 +91,7 @@ async def on_ready():
                 print(f"   Error accessing channel {channel.name}: {e}")
 
 # Run the bot
-bot.run(bot_token)
+bot.run(bt)
 ```
 
 ![006.png](images/006.png)
