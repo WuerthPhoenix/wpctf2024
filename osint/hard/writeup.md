@@ -24,9 +24,9 @@ What is the email of the developer (author) of the phishing kit?
 
 ### SOLUTION
 ```
-WPCTF{evil.evil.evil.evil.evil.999@protonmail.com}
+WPCTF{evil.evil.evil.evil.evil.999@gmail.com}
 ```
-For retrieving the email of the developer, the analyst needs to understand that the phishing kit was misconfigured. It exposes a .git directory. USing tool or scripts for resolving it the challenger needs to download it.
+For retrieving the email of the developer of the phishing kit, the analyst needs to understand that the phishing kit was misconfigured. It exposes a .git directory. USing tool or scripts for resolving it the challenger needs to download it.
 
 ![001a.png](images/001a.png)
 
@@ -58,13 +58,44 @@ From the retrieved token and chat history, it becomes possible to access the com
 
 ![005.png](images/005.png)
 
-Analysts can utilize tools such as [Telegram bot dumper](https://github.com/soxoj/telegram-bot-dumper) to extract messages intended for testing the kit. OSINT, or Open Source Intelligence, involves recognizing that the kit may be sold by a developer and subsequently installed by a Threat Actor. This understanding is a crucial step in addressing the flag effectively. 
+Analysts can utilize Discord API for retrieving the information published by the bot.   
+An example of a simple script useful for retrieving the data.
+
+```
+import discord
+from discord.ext import commands
+
+# Intents to enable specific bot functionalities
+intents = discord.Intents.default()
+intents.messages = True
+intents.guilds = True
+intents.message_content = True
+
+bt = "XXX"  
+
+@bot.event
+async def on_ready():
+    print(f"Bot is online as {bot.user}")
+    print("Fetching accessible guilds and channels...")
+
+    for guild in bot.guilds:
+        print(f"\nGuild: {guild.name} (ID: {guild.id})")
+        for channel in guild.text_channels:
+            print(f" - Channel: {channel.name} (ID: {channel.id})")
+            try:
+                # Fetch recent messages from the channel
+                print("  Messages:")
+                async for message in channel.history(limit=10):  # Limit to the last 5 messages
+                    print(f"   [{message.created_at}] {message.author}: {message.content}")
+            except Exception as e:
+                print(f"   Error accessing channel {channel.name}: {e}")
+
+# Run the bot
+bot.run(bt)
+```
 
 ![006.png](images/006.png)
 
-The date of capture is, however, disclosed. The photo were taken in date 25-10-2024.
-
-![009.png](images/009.png)
 
 ## CHALLENGE 4 ( LOCKED - NEED CHALLENGE 3 )
 
@@ -78,18 +109,13 @@ What event did the developer attend(ed)? In detail, what/who was the main attrac
 WPCTF{John Maus}
 ```
 
-tarting from the email evil.evil.evil.evil.evil.999@protonmail.com , the analyst must understand that the email address present a pretty unique key used for registering it.
-
-
-Pivoting from the address evil.evil.evil.evil.evil.999, participants can identify the corresponding Gmail address as evil.evil.evil.evil.evil.999@gmail.com.
-
-This email was utilized to register a Flickr account. The process of identification is straightforward. By employing tools like Holehe, participants can uncover social media accounts associated with the identified email.
-GitHub - megadose/holehe: holehe allows you to check if the mail is used on different sites like twitter, instagram and will retrieve information on sites with the forgotten password function.
+The email `WPCTF{evil.evil.evil.evil.evil.999@gmail.com}` was utilized to register a Flickr account. The process of identification is straightforward. By employing tools like Holehe, participants can uncover social media accounts associated with the identified email.
+[GitHub - megadose/holehe](https://github.com/megadose/holehe): holehe allows you to check if the mail is used on different sites like twitter, instagram and will retrieve information on sites with the forgotten password function.
 
 A manual method for identifying user accounts involves retrieving information from the Flickr API.
-Email to Flickr account - OSINT tutorials by Aware Online
+[Email to Flickr account - OSINT](https://www.aware-online.com/en/email-to-flickr-account-part1/) tutorials by Aware Online
 
-A faster approach will using a payed service like OSINT Industries | Powerful Tools for Accurate Investigations.
+A faster approach will using a payed service like [OSINT Industries | Powerful Tools](https://www.osint.industries/) for Accurate Investigations.
 
 ![007.png](images/007.png)
 
@@ -105,12 +131,12 @@ Going further and analyzing the given photo, let the participants identify the v
 
 ![010.png](images/010.png)
 
-From a reverse image search, the analyst can identify the location as Covo Club.    
+From a reverse image search, the analyst can identify the location as `Covo Club`.    
 ![011.png](images/011.png)
 
 ![012.png](images/012.png)
 
-Looking forward searching for the event and date of the shoot let the analyst to identify the name of John Maus the last osint flag of the the comptetion.
+Looking forward searching for the event and date of the shoot let the analyst to identify the name of `John Maus` the last osint flag of the the comptetion.
 
 ![013.png](images/013.png)
 
